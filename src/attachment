@@ -1,0 +1,73 @@
+return (
+	<Container className='text-center'>
+		<Row>
+			<Col lg={6} className='offset-lg-3 mt-5'>
+				<Card>
+					<Form onSubmit={handleFormSubmit}>
+						<CardHeader className=''>SignIn here</CardHeader>
+						<CardBody>
+							<FormGroup row>
+								<Label for='email' sm={3}>
+									Email
+								</Label>
+								<Col sm={9}>
+									<Input
+										type='email'
+										name='email'
+										id='email'
+										placeholder='provide your email'
+										value={email}
+										onChange={e => setEmail(e.target.value)}
+									/>
+								</Col>
+							</FormGroup>
+							<FormGroup row>
+								<Label for='password' sm={3}>
+									Password
+								</Label>
+								<Col sm={9}>
+									<Input
+										type='password'
+										name='password'
+										id='password'
+										placeholder='your password here'
+										value={password}
+										onChange={e => setPassword(e.target.value)}
+									/>
+								</Col>
+							</FormGroup>
+						</CardBody>
+						<CardFooter>
+							<Button type='submit' block color='primary'>
+								Sign In
+							</Button>
+						</CardFooter>
+					</Form>
+				</Card>
+			</Col>
+		</Row>
+	</Container>
+);
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAz2rP7SuVk4jwioxyTcpRD50yb1riFw-A",
+  authDomain: "mygitapp-58fb8.firebaseapp.com",
+  projectId: "mygitapp-58fb8",
+  storageBucket: "mygitapp-58fb8.appspot.com",
+  messagingSenderId: "827102371659",
+  appId: "1:827102371659:web:b872995f051af6975e12ce",
+  measurementId: "G-LF713L3WD0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
